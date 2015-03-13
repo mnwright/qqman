@@ -119,6 +119,10 @@ manhattan <- function(x, chr="CHR", bp="BP", p="P", snp="SNP",
         xlabel = 'Chromosome'
         #labs = append(unique(d$CHR),'') ## I forgot what this was here for... if seems to work, remove.
         labs <- unique(d$CHR)
+        labs[labs == 23] <- "X"
+        labs[labs == 24] <- "Y"
+        labs[labs == 25] <- "XY"
+        labs[labs == 26] <- "MT"
     }
     
     # Initialize plot
